@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You Messed with the Wrong One</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            animation: flashBackground 0.5s infinite;
+        }
+        @keyframes flashBackground {
+            0% { background-color: red; }
+            50% { background-color: black; }
+            100% { background-color: red; }
+        }
+        #trollface {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #fortnite {
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            width: 150px;
+            height: auto;
+        }
+        #email {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            animation: blurText 0.1s infinite;
+        }
+        #message {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            animation: blurText 0.1s infinite;
+        }
+        @keyframes blurText {
+            0% { text-shadow: 0 0 10px red; }
+            50% { text-shadow: 0 0 20px blue; }
+            100% { text-shadow: 0 0 10px red; }
+        }
+    </style>
+</head>
+<body>
+    <div id="email">This is wrong? <a href="mailto:appeals@email.com" style="color: white; text-decoration: underline;">appeals@email.com</a></div>
+    <img id="trollface" src="https://media.tenor.com/DhyEu2-i6ZQAAAAM/troll-dancing.gif" alt="Troll Dancing">
+    <img id="fortnite" src="https://media.tenor.com/3-MhvsnN6BgAAAAM/fastest_llama-fortnite.gif" alt="Crying Fortnite">
+    <div id="message"></div>
+    <audio autoplay loop>
+        <source src="https://www.soundjay.com/buttons/sounds/beep-07.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        // Annoying mouse trail
+        document.addEventListener('mousemove', function(e) {
+            var trail = document.createElement('div');
+            trail.style.position = 'absolute';
+            trail.style.width = '5px';
+            trail.style.height = '5px';
+            trail.style.background = 'white';
+            trail.style.top = e.pageY + 'px';
+            trail.style.left = e.pageX + 'px';
+            document.body.appendChild(trail);
+            setTimeout(function() {
+                document.body.removeChild(trail);
+            }, 100);
+        });
+
+        // Generate random messages
+        var messages = [
+            "My ego was too big, why didn't I listen",
+            "I really messed with the wrong one, please stop",
+            "Why does he do this to me, I just made him a bit mad",
+            "I feel bad for attacking him :(",
+            "Maybe next time I'll think twice",
+            "This wasn't part of the plan",
+            "I should have known better",
+            "Regret is hitting me hard now",
+            "Please, have mercy!",
+            "I didn't mean to upset you",
+            "This is not what I expected",
+            "Is this how it ends?",
+            "I wish I could turn back time",
+            "Note to self: Don't do that again",
+            "I thought it was just a joke",
+            "Lesson learned the hard way",
+            "Can we call a truce?",
+            "I surrender!",
+            "You win, I lose",
+            "Why me?",
+            "Next time I'll be more careful",
+            "I didn't see this coming",
+            "This escalated quickly",
+            "I regret everything",
+            "Maybe we can be friends?",
+            "I take back what I said",
+            "That was a mistake",
+            "Oops!",
+            "Didn't expect this reaction",
+            "Am I in trouble?",
+            "This is awkward",
+            "Well, this is unfortunate",
+            "I'm sorry!",
+            "Can we start over?",
+            "Please forgive me",
+            "I didn't think it through",
+            "Uh-oh",
+            "I messed up big time",
+            "This isn't fun anymore",
+            "I give up",
+            "Time to retreat",
+            "Not my best idea",
+            "I should apologize",
+            "Didn't mean any harm",
+            "Let's forget this happened",
+            "Yikes!",
+            "Caught in the act",
+            "Maybe I overstepped",
+            "I didn't realize",
+            "This went south fast",
+            "Hold on, let's talk",
+            "Feeling regretful",
+            "I should have stayed quiet",
+            "Whoops!",
+            "That's my bad",
+            "Can we undo this?",
+            "I acted without thinking",
+            "This got out of hand",
+            "Mistakes were made",
+            "I didn't expect this",
+            "Is it too late to say sorry?",
+            "I accept defeat",
+            "Please, let's stop",
+            "Not what I signed up for",
+            "I underestimated you",
+            "Didn't see that one coming",
+            "I'm backing off now",
+            "Let's call it even",
+            "I learned my lesson",
+            "That escalated fast",
+            "I think I'll leave now",
+            "This isn't worth it",
+            "Consider me humbled",
+            "You've made your point",
+            "I regret my choices",
+            "Maybe I should run",
+            "Point taken",
+            "Time to rethink my life",
+            "I feel foolish",
+            "This didn't go as planned",
+            "Abort mission!",
+            "I didn't mean it",
+            "You've proven your point",
+            "I should have known",
+            "This was a bad idea",
+            "I've made a huge mistake",
+            "Let's just forget it",
+            "Peace offering?",
+            "I'm waving the white flag",
+            "Total miscalculation",
+            "Error in judgment",
+            "I didn't expect retaliation",
+            "Can we pretend this didn't happen?",
+            "I'm outmatched",
+            "You got me",
+            "Message received",
+            "I yield",
+            "Retreat!",
+            "Defeat accepted",
+            "You've bested me",
+            "I concede",
+            "This didn't end well",
+            "I admit defeat",
+            "Lesson learned",
+            "Won't happen again",
+            "Time to move on"
+        ];
+
+        var randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById('message').textContent = randomMessage;
+    </script>
+</body>
+</html>
